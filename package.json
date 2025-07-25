@@ -1,1 +1,12 @@
-
+{
+  "name": "kisahdamxstore",
+  "version": "1.0.0",
+  "description": "Kisah Damx Store - Perjalanan bermula dari 2024 dengan pelbagai halangan.",
+  "scripts": {
+    "start": "vercel dev",
+    "build": "",
+    "deploy": "vercel --prod"
+  },
+  "author": "MOHAMAD ADAM AMRIRRULAH BIN MAZLAN",
+  "license": "MIT"
+}
