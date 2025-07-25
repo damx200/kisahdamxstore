@@ -1,88 +1,113 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kisah Damx Store</title>
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      color: #fff700;
+      overflow: hidden;
+    }
+
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       text-align: center;
-      animation: neonBG 10s linear infinite;
-      background: linear-gradient(270deg, #000000, #1a1a00, #333300, #1a1a00, #000000);
-      background-size: 1000% 1000%;
-    }
-
-    @keyframes neonBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      padding: 50px 20px;
+      color: #fff;
+      padding: 2rem;
     }
 
     h1 {
-      font-size: 2.5em;
-      text-shadow:
-        0 0 5px #fff700,
-        0 0 10px #fff700,
-        0 0 20px #fff700,
-        0 0 40px #ff0;
+      font-size: 3rem;
+      color: #ffcc00;
+      text-shadow: 0 0 10px #ffcc00, 0 0 20px #fff700;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin-top: 10px;
+      text-shadow: 0 0 8px #ffffffaa;
     }
 
     p {
-      font-size: 1.2em;
+      max-width: 700px;
       margin-top: 20px;
-      line-height: 1.6em;
-      text-shadow: 0 0 8px #fff700;
+      font-size: 1rem;
+      line-height: 1.7;
+      text-align: justify;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffffaa, 0 0 20px #00ffff55;
     }
 
-    img {
-      width: 180px;
-      border-radius: 100px;
-      border: 4px solid #fff700;
-      box-shadow: 0 0 25px #fff700;
-      margin: 20px auto;
+    .social-links {
+      margin-top: 30px;
     }
 
-    .socials a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      background: transparent;
-      border: 2px solid #fff700;
-      color: #fff700;
+    .social-links a {
       text-decoration: none;
-      text-shadow: 0 0 5px #fff700;
-      box-shadow: 0 0 10px #fff700;
-      border-radius: 5px;
-      transition: all 0.3s ease;
+      margin: 10px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: #ffcc00;
+      color: #000;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ffcc00aa;
+      transition: 0.3s;
     }
 
-    .socials a:hover {
+    .social-links a:hover {
       background: #fff700;
-      color: #000;
-      box-shadow: 0 0 25px #fff700;
+      box-shadow: 0 0 15px #fff700;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+
+  <video autoplay muted loop class="bg-video">
+    <source src="https://files.catbox.moe/1rnba9.mp4" type="video/mp4">
+  </video>
+
+  <div class="content">
     <h1>DAMX STORE</h1>
-    <img src="https://files.catbox.moe/b5pfw2.jpg" alt="Gambar Damx">
-    <p><strong>MOHAMAD ADAM AMRIRRULAH BIN MAZLAN</strong></p>
-    <p>Bermula dari tahun 2024, Damx Store bukan terus berjaya. Banyak halangan, banyak kali jatuh. Tapi setiap kali jatuh, bangkit lebih kuat. Dari bawah sampai berdiri sendiri – semua dengan usaha dan semangat tak putus asa. Kini, Damx Store terus melangkah dengan misi bantu orang lain pula.</p>
-    
-    <div class="socials">
-      <a href="https://wa.me/601130538675">WhatsApp</a>
-      <a href="https://t.me/ItmeDamx">Telegram</a>
-      <a href="#">TikTok: Keban</a>
+    <h2>Mohamad Adam Amrirrulah Bin Mazlan</h2>
+    <p>
+      Pada tahun 2024, bermulalah perjalanan sebuah impian yang diberi nama <strong>DAMX STORE</strong> — diasaskan oleh seorang anak muda bernama <strong>Mohamad Adam Amrirrulah Bin Mazlan</strong>.<br><br>
+      Bermula dari bawah tanpa modal besar, tanpa ilmu bisnes yang lengkap, hanya berbekalkan semangat, tekad dan keyakinan diri. Dalam dunia jual beli yang penuh persaingan, DAMX perlu menempuh pelbagai dugaan. Ada masa barang tak laku, ada masa pelanggan tak percaya, malah ada juga yang cuba jatuhkan. Tapi itu semua tak mematahkan semangat.<br><br>
+      Setiap kegagalan dijadikan pengajaran. Setiap hari adalah peluang baru untuk belajar dan bangkit semula. DAMX bukan sekadar menjual, tapi membawa satu nilai: <em>percaya pada proses, usaha tanpa henti, dan jujur dalam urusniaga</em>.<br><br>
+      Kini, sedikit demi sedikit, kepercayaan pelanggan mula datang. Dari satu pesanan menjadi sepuluh, dari sepuluh menjadi seratus. Nama DAMX STORE mula dikenali, dan kisah perjuangan ini masih belum tamat — kerana bagi DAMX, kejayaan sebenar bukan hanya soal duit, tapi soal perjalanan, prinsip, dan hati yang tidak mudah menyerah.<br><br>
+      Terima kasih kepada semua yang pernah menyokong. Perjalanan ini baru bermula, dan <strong>DAMX akan terus melangkah.</strong>
+    </p>
+
+    <div class="social-links">
+      <a href="https://wa.me/601130538675" target="_blank">WhatsApp</a>
+      <a href="https://t.me/ItmeDamx" target="_blank">Telegram</a>
+      <a href="https://tiktok.com/@Keban" target="_blank">TikTok</a>
     </div>
   </div>
+
 </body>
 </html>
