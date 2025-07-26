@@ -111,7 +111,7 @@
   </video>
 
   <div class="content">
-    <h1>DAMX STORE</h1>
+    <h1 id="greeting">DAMX STORE</h1>
     <h2>Mohamad Adam Amrirrulah Bin Mazlan</h2>
     <p>
       Pada tahun 2024, bermulalah perjalanan sebuah impian yang diberi nama <strong>DAMX STORE</strong> — diasaskan oleh seorang anak muda bernama <strong>Mohamad Adam Amrirrulah Bin Mazlan</strong>.<br><br>
@@ -127,30 +127,49 @@
       <a href="https://tiktok.com/@Keban" target="_blank">TikTok</a>
     </div>
 
-    <!-- Butang main muzik (fallback untuk phone) -->
     <div style="text-align:center;">
       <button id="playBtn">▶ Mainkan Lagu</button>
     </div>
+
+    <div id="joined-users" style="margin-top:40px; text-align:center;">
+      <h3>Pengguna Yang Telah Join:</h3>
+      <ul id="userList" style="list-style:none; padding:0; color:#00ffff;"></ul>
+    </div>
   </div>
 
-  <!-- Elemen audio -->
   <audio id="bgMusic" loop>
     <source src="https://files.catbox.moe/yormik.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- JavaScript: Autoplay fallback -->
   <script>
     const audio = document.getElementById('bgMusic');
     const playBtn = document.getElementById('playBtn');
 
     window.addEventListener('load', () => {
-      // Cuba autoplay
       const tryPlay = audio.play();
       if (tryPlay !== undefined) {
         tryPlay.catch(() => {
-          // Kalau gagal autoplay, tunjuk butang
           playBtn.style.display = 'inline-block';
         });
+      }
+
+      // Dapatkan nama dari localStorage
+      const namaPengguna = localStorage.getItem("damx_nama");
+      if (namaPengguna) {
+        document.getElementById("greeting").innerText = "Selamat Datang, " + namaPengguna + "!";
+
+        // Simpan dalam senarai pengguna
+        let senarai = JSON.parse(localStorage.getItem("senarai_pengguna")) || [];
+        if (!senarai.includes(namaPengguna)) {
+          senarai.push(namaPengguna);
+          localStorage.setItem("senarai_pengguna", JSON.stringify(senarai));
+        }
+
+        // Tunjuk senarai pengguna
+        const userList = document.getElementById("userList");
+        userList.innerHTML = senarai.map(nama => `<li>${nama}</li>`).join("");
+      } else {
+        window.location.href = "login.html";
       }
     });
 
