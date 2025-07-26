@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk DAMX STORE</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #000000, #222222);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
 
+    h1 {
+      color: #00ffff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #00ffffaa;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #00ffff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffffaa;
+    }
+
+    button:hover {
+      background-color: #00dddd;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Selamat Datang ke DAMX STORE</h1>
+  <input type="text" id="username" placeholder="Masukkan nama anda" />
+  <button onclick="masuk()">Masuk</button>
+
+  <div class="footer">© 2025 Damx Official</div>
+
+  <script>
+    function masuk() {
+      const nama = document.getElementById('username').value.trim();
+      if (nama) {
+        // Simpan dalam localStorage
+        localStorage.setItem("namaPengguna", nama);
+
+        // Ambil senarai lama, tambah nama baru
+        const senarai = JSON.parse(localStorage.getItem("senaraiNama")) || [];
+        senarai.push(nama);
+        localStorage.setItem("senaraiNama", JSON.stringify(senarai));
+
+        // Redirect ke laman utama
+        window.location.href = "index.html";
+      } else {
+        alert("Sila masukkan nama dahulu.");
+      }
+    }
+  </script>
+
+</body>
+</html>
