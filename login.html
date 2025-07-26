@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login DAMX</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #000000, #222222);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #00ffff;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffffaa;
+    }
+
+    button:hover {
+      background-color: #00dddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Masukkan Nama Anda</h1>
+  <input type="text" id="nama" placeholder="Contoh: Damx777" />
+  <button onclick="masuk()">Masuk</button>
+
+  <script>
+    function masuk() {
+      const nama = document.getElementById("nama").value.trim();
+      if (nama) {
+        localStorage.setItem("damx_nama", nama);
+        window.location.href = "kisah.html";
+      } else {
+        alert("Sila isi nama terlebih dahulu.");
+      }
+    }
+  </script>
+</body>
+</html>
