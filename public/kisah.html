@@ -86,38 +86,6 @@
       background: #fff700;
       box-shadow: 0 0 15px #fff700;
     }
-
-    #playBtn {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 10px 20px;
-      background: #00ffff;
-      color: #000;
-      font-weight: bold;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00ffffaa;
-      cursor: pointer;
-    }
-
-    #playBtn:hover {
-      background: #00dddd;
-    }
-
-    .thank-you {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 1.2rem;
-    }
-
-    .thank-you a {
-      color: #ffcc00;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .thank-you a:hover {
-      text-shadow: 0 0 10px #ffcc00;
-    }
   </style>
 </head>
 <body>
@@ -125,6 +93,10 @@
   <video autoplay muted loop class="bg-video">
     <source src="https://files.catbox.moe/1rnba9.mp4" type="video/mp4">
   </video>
+
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/yormik.mp3" type="audio/mpeg">
+  </audio>
 
   <div class="content">
     <h1>DAMX STORE</h1>
@@ -139,43 +111,8 @@
 
     <div class="social-links">
       <a href="https://wa.me/601130538675" target="_blank">WhatsApp</a>
-      <a href="https://t.me/ItmeDamx" target="_blank">Telegram</a>
+      <a href="terima-kasih.html">Thank You For ❤️</a>
     </div>
-
-    <!-- Butang main muzik -->
-    <div style="text-align:center;">
-      <button id="playBtn">▶ Mainkan Lagu</button>
-    </div>
-
-    <!-- Link ucapan -->
-    <div class="thank-you">
-      <a href="terima-kasih.html">Thank You for Supporting Damx Store 💛</a>
-    </div>
-
   </div>
-
-  <audio id="bgMusic" loop>
-    <source src="https://files.catbox.moe/yormik.mp3" type="audio/mpeg">
-  </audio>
-
-  <script>
-    const audio = document.getElementById('bgMusic');
-    const playBtn = document.getElementById('playBtn');
-
-    window.addEventListener('load', () => {
-      const tryPlay = audio.play();
-      if (tryPlay !== undefined) {
-        tryPlay.catch(() => {
-          playBtn.style.display = 'inline-block';
-        });
-      }
-    });
-
-    playBtn.addEventListener('click', () => {
-      audio.play();
-      playBtn.style.display = 'none';
-    });
-  </script>
-
 </body>
 </html>
