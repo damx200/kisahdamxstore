@@ -5,111 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ucapan Terima Kasih</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-    }
-
     body {
-      position: relative;
-      z-index: 1;
-      overflow-x: hidden;
-    }
-
-    video.bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .content {
-      position: relative;
-      z-index: 2;
-      min-height: 100vh;
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: auto;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #000428, #004e92);
+      color: white;
       text-align: center;
+      padding: 50px;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 20px;
-      color: #ffcc00;
-      text-shadow: 0 0 10px #ffcc00aa;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffffaa;
     }
 
     p {
       font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
       line-height: 1.8;
-      color: #00ffff;
-      text-shadow: 0 0 8px #00ffffaa;
+      text-shadow: 0 0 8px #ffffff44;
     }
 
-    button {
-      margin-top: 30px;
-      padding: 12px 25px;
-      background: #00ffff;
-      color: #000;
+    a.back {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 20px;
+      background: #ffcc00;
+      color: black;
+      text-decoration: none;
       font-weight: bold;
-      border: none;
       border-radius: 10px;
-      box-shadow: 0 0 10px #00ffffaa;
-      cursor: pointer;
+      box-shadow: 0 0 10px #ffcc00aa;
     }
 
-    button:hover {
-      background: #00dddd;
+    a.back:hover {
+      background: #fff700;
     }
   </style>
 </head>
 <body>
+  <h1>Ucapan Terima Kasih</h1>
+  <p>
+    Saya ingin merakamkan setinggi-tinggi penghargaan kepada ibu dan ayah yang sentiasa mendoakan serta memberi sokongan moral yang tidak ternilai.<br><br>
+    Terima kasih kepada Allah SWT atas segala nikmat dan kekuatan yang diberikan untuk terus melangkah dalam perjalanan ini.<br><br>
+    Tidak dilupakan juga kepada semua rakan-rakan dan pelanggan yang setia menyokong DAMX STORE sejak dari awal. Tanpa anda semua, kisah ini mungkin tidak akan wujud.<br><br>
+    Terima kasih kerana menjadi sebahagian daripada perjalanan ini. Kita terus melangkah bersama!
+  </p>
 
-  <video autoplay muted loop class="bg-video">
-    <source src="https://files.catbox.moe/1rnba9.mp4" type="video/mp4">
-  </video>
-
-  <div class="content">
-    <h1>Ucapan Terima Kasih</h1>
-    <p>
-      Saya ingin merakamkan jutaan terima kasih kepada semua yang telah menyokong perjalanan Damx Store dari mula hingga sekarang.
-      <br><br>
-      Pertama sekali, penghargaan khas kepada ibu bapa saya — atas doa, kasih sayang dan pengorbanan yang tidak ternilai. Tanpa restu mereka, tiadalah Damx seperti hari ini.
-      <br><br>
-      Saya juga amat bersyukur kepada Allah SWT, kerana memberi kekuatan, rezeki dan ketenangan dalam setiap cabaran. 
-      <br><br>
-      Tidak lupa juga kepada semua sahabat, pelanggan, dan penyokong yang percaya pada usaha kecil ini. Anda semua adalah sebahagian daripada kisah kejayaan ini. 
-      <br><br>
-      Damx Store bukan milik saya seorang, tetapi milik semua yang pernah memberi semangat. Terima kasih kerana menjadi sebahagian daripada perjalanan ini.
-    </p>
-
-    <button onclick="document.getElementById('bgm').play(); this.style.display='none';">▶ Mainkan Lagu</button>
-  </div>
-
-  <audio id="bgm" loop preload="auto">
-    <source src="https://files.catbox.moe/yormik.mp3" type="audio/mpeg">
-  </audio>
-
-  <script>
-    // Auto play bila klik mana-mana tempat di halaman
-    window.addEventListener('click', function () {
-      const audio = document.getElementById('bgm');
-      if (audio.paused) {
-        audio.play().catch(() => {});
-      }
-    }, { once: true });
-  </script>
-
+  <a href="kisah.html" class="back">← Kembali</a>
 </body>
 </html>
