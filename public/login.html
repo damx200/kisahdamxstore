@@ -1,87 +1,79 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Masuk DAMX STORE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Nama Pengguna</title>
   <style>
     body {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #000000, #222222);
-      color: #fff;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      margin: 0;
+      color: #fff;
     }
 
-    h1 {
-      color: #00ffff;
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px #00ffffaa;
+    .login-box {
+      background: #ffffff22;
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00000088;
+      text-align: center;
     }
 
-    input {
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"] {
       padding: 10px;
-      font-size: 16px;
+      width: 100%;
       border: none;
       border-radius: 8px;
-      margin-bottom: 20px;
-      width: 250px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
     }
 
     button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #00ffff;
+      background: #ffcc00;
       color: #000;
+      padding: 10px 20px;
       border: none;
       border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 0 10px #00ffffaa;
+      transition: 0.3s;
     }
 
     button:hover {
-      background-color: #00dddd;
-    }
-
-    .footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9rem;
-      color: #aaa;
+      background: #fff700;
     }
   </style>
 </head>
 <body>
-
-  <h1>Selamat Datang ke DAMX STORE</h1>
-  <input type="text" id="username" placeholder="Masukkan nama anda" />
-  <button onclick="masuk()">Masuk</button>
-
-  <div class="footer">© 2025 Damx Official</div>
+  <div class="login-box">
+    <h2>Masukkan Nama Anda</h2>
+    <input type="text" id="nama" placeholder="Contoh: Damx777" />
+    <button onclick="login()">Masuk</button>
+  </div>
 
   <script>
-    function masuk() {
-      const nama = document.getElementById('username').value.trim();
+    function login() {
+      const nama = document.getElementById("nama").value.trim();
       if (nama) {
-        // Simpan dalam localStorage
         localStorage.setItem("namaPengguna", nama);
 
-        // Ambil senarai lama, tambah nama baru
-        const senarai = JSON.parse(localStorage.getItem("senaraiNama")) || [];
-        senarai.push(nama);
-        localStorage.setItem("senaraiNama", JSON.stringify(senarai));
+        // Tambah ke senarai
+        let senarai = JSON.parse(localStorage.getItem("senaraiNama")) || [];
+        if (!senarai.includes(nama)) {
+          senarai.push(nama);
+          localStorage.setItem("senaraiNama", JSON.stringify(senarai));
+        }
 
-        // Redirect ke laman utama
+        // Redirect
         window.location.href = "index.html";
       } else {
-        alert("Sila masukkan nama dahulu.");
-      }
-    }
-  </script>
-
-</body>
-</html>
+        alert("Sila masukkan nama terlebih dahulu.");
