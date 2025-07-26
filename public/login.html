@@ -53,20 +53,8 @@
         return;
       }
 
-      // Simpan ke localStorage
-      localStorage.setItem("namaPengguna", nama);
-
-      // Simpan ke senarai
-      let senarai = JSON.parse(localStorage.getItem("senaraiNama")) || [];
-      if (!senarai.includes(nama)) {
-        senarai.push(nama);
-        localStorage.setItem("senaraiNama", JSON.stringify(senarai));
-      }
-
-      // Redirect
-      setTimeout(() => {
-        window.location.href = "kisah.html";
-      }, 300); // bagi masa sedikit
+      // Redirect terus tanpa simpan
+      window.location.href = "kisah.html";
     }
   </script>
 
