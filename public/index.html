@@ -102,6 +102,17 @@
     #playBtn:hover {
       background: #00dddd;
     }
+
+    ul {
+      text-align: center;
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-top: 5px;
+      color: #00ffff;
+    }
   </style>
 </head>
 <body>
@@ -131,9 +142,9 @@
       <button id="playBtn">▶ Mainkan Lagu</button>
     </div>
 
-    <div id="joined-users" style="margin-top:40px; text-align:center;">
+    <div id="senaraiPengguna" style="margin-top:40px; text-align:center;">
       <h3>Pengguna Yang Telah Join:</h3>
-      <ul id="userList" style="list-style:none; padding:0; color:#00ffff;"></ul>
+      <ul id="userList"></ul>
     </div>
   </div>
 
@@ -146,6 +157,7 @@
     const playBtn = document.getElementById('playBtn');
 
     window.addEventListener('load', () => {
+      // Autoplay music
       const tryPlay = audio.play();
       if (tryPlay !== undefined) {
         tryPlay.catch(() => {
@@ -153,24 +165,22 @@
         });
       }
 
-      // Dapatkan nama dari localStorage
-      const namaPengguna = localStorage.getItem("damx_nama");
-      if (namaPengguna) {
-        document.getElementById("greeting").innerText = "Selamat Datang, " + namaPengguna + "!";
-
-        // Simpan dalam senarai pengguna
-        let senarai = JSON.parse(localStorage.getItem("senarai_pengguna")) || [];
-        if (!senarai.includes(namaPengguna)) {
-          senarai.push(namaPengguna);
-          localStorage.setItem("senarai_pengguna", JSON.stringify(senarai));
-        }
-
-        // Tunjuk senarai pengguna
-        const userList = document.getElementById("userList");
-        userList.innerHTML = senarai.map(nama => `<li>${nama}</li>`).join("");
+      // Dapatkan nama pengguna dari localStorage
+      const nama = localStorage.getItem("namaPengguna");
+      if (nama) {
+        document.getElementById("greeting").innerHTML += `<br><span style="font-size:1.5rem;">Selamat datang, <strong>${nama}</strong>!</span>`;
       } else {
         window.location.href = "login.html";
       }
+
+      // Tunjukkan senarai pengguna
+      const senarai = JSON.parse(localStorage.getItem("senaraiNama")) || [];
+      const userList = document.getElementById("userList");
+      senarai.forEach(n => {
+        const li = document.createElement("li");
+        li.textContent = n;
+        userList.appendChild(li);
+      });
     });
 
     playBtn.addEventListener('click', () => {
