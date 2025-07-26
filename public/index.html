@@ -102,17 +102,6 @@
     #playBtn:hover {
       background: #00dddd;
     }
-
-    ul {
-      text-align: center;
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      margin-top: 5px;
-      color: #00ffff;
-    }
   </style>
 </head>
 <body>
@@ -122,7 +111,7 @@
   </video>
 
   <div class="content">
-    <h1 id="greeting">DAMX STORE</h1>
+    <h1>DAMX STORE</h1>
     <h2>Mohamad Adam Amrirrulah Bin Mazlan</h2>
     <p>
       Pada tahun 2024, bermulalah perjalanan sebuah impian yang diberi nama <strong>DAMX STORE</strong> — diasaskan oleh seorang anak muda bernama <strong>Mohamad Adam Amrirrulah Bin Mazlan</strong>.<br><br>
@@ -141,11 +130,6 @@
     <div style="text-align:center;">
       <button id="playBtn">▶ Mainkan Lagu</button>
     </div>
-
-    <div id="senaraiPengguna" style="margin-top:40px; text-align:center;">
-      <h3>Pengguna Yang Telah Join:</h3>
-      <ul id="userList"></ul>
-    </div>
   </div>
 
   <audio id="bgMusic" loop>
@@ -157,30 +141,12 @@
     const playBtn = document.getElementById('playBtn');
 
     window.addEventListener('load', () => {
-      // Autoplay music
       const tryPlay = audio.play();
       if (tryPlay !== undefined) {
         tryPlay.catch(() => {
           playBtn.style.display = 'inline-block';
         });
       }
-
-      // Dapatkan nama pengguna dari localStorage
-      const nama = localStorage.getItem("namaPengguna");
-      if (nama) {
-        document.getElementById("greeting").innerHTML += `<br><span style="font-size:1.5rem;">Selamat datang, <strong>${nama}</strong>!</span>`;
-      } else {
-        window.location.href = "login.html";
-      }
-
-      // Tunjukkan senarai pengguna
-      const senarai = JSON.parse(localStorage.getItem("senaraiNama")) || [];
-      const userList = document.getElementById("userList");
-      senarai.forEach(n => {
-        const li = document.createElement("li");
-        li.textContent = n;
-        userList.appendChild(li);
-      });
     });
 
     playBtn.addEventListener('click', () => {
