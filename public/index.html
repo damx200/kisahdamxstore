@@ -86,6 +86,22 @@
       background: #fff700;
       box-shadow: 0 0 15px #fff700;
     }
+
+    #playBtn {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #00ffff;
+      color: #000;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffffaa;
+      cursor: pointer;
+    }
+
+    #playBtn:hover {
+      background: #00dddd;
+    }
   </style>
 </head>
 <body>
@@ -110,11 +126,39 @@
       <a href="https://t.me/ItmeDamx" target="_blank">Telegram</a>
       <a href="https://tiktok.com/@Keban" target="_blank">TikTok</a>
     </div>
+
+    <!-- Butang main muzik (fallback untuk phone) -->
+    <div style="text-align:center;">
+      <button id="playBtn">▶ Mainkan Lagu</button>
+    </div>
   </div>
 
-  <audio autoplay loop hidden>
-  <source src="https://files.catbox.moe/yormik.mp3" type="audio/mpeg">
+  <!-- Elemen audio -->
+  <audio id="bgMusic" loop>
+    <source src="https://files.catbox.moe/yormik.mp3" type="audio/mpeg">
   </audio>
-  
+
+  <!-- JavaScript: Autoplay fallback -->
+  <script>
+    const audio = document.getElementById('bgMusic');
+    const playBtn = document.getElementById('playBtn');
+
+    window.addEventListener('load', () => {
+      // Cuba autoplay
+      const tryPlay = audio.play();
+      if (tryPlay !== undefined) {
+        tryPlay.catch(() => {
+          // Kalau gagal autoplay, tunjuk butang
+          playBtn.style.display = 'inline-block';
+        });
+      }
+    });
+
+    playBtn.addEventListener('click', () => {
+      audio.play();
+      playBtn.style.display = 'none';
+    });
+  </script>
+
 </body>
 </html>
